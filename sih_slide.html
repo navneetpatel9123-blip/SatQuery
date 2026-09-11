@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SatQuery AI - SIH 2026 Presentation Slide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #0B0F19;
+      font-family: 'Inter', sans-serif;
+      color: #0F172A;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .slide-container {
+      width: 1333px;
+      height: 750px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 24px 36px;
+      position: relative;
+    }
+    /* Top Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .project-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .project-logo-badge {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #1E1B4B 0%, #2563EB 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .project-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1E1B4B;
+      letter-spacing: -0.5px;
+    }
+    .project-subtitle {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+      margin-left: 8px;
+    }
+    .sih-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 13px;
+      color: #1E1B4B;
+    }
+    .sih-badge span {
+      color: #EA580C;
+    }
+
+    /* Main Grid */
+    .slide-body {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 24px;
+      flex: 1;
+    }
+
+    /* Column Cards */
+    .column-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .section-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #1E1B4B;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::before {
+      content: "❖";
+      color: #2563EB;
+      font-size: 15px;
+    }
+
+    /* Left References Styling */
+    .ref-group {
+      margin-bottom: 12px;
+    }
+    .ref-group-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ref-list {
+      list-style: none;
+      padding-left: 6px;
+    }
+    .ref-item {
+      font-size: 11px;
+      line-height: 1.4;
+      margin-bottom: 3px;
+      color: #334155;
+    }
+    .ref-item a {
+      color: #2563EB;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .ref-item a:hover {
+      text-decoration: underline;
+      color: #1D4ED8;
+    }
+
+    /* Workflow Flowchart */
+    .workflow-container {
+      margin-top: 8px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .workflow-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1E1B4B;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .workflow-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      position: relative;
+    }
+    .wf-step {
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 6px 4px;
+      text-align: center;
+    }
+    .wf-step.active {
+      background: #EFF6FF;
+      border-color: #93C5FD;
+    }
+    .wf-step-num {
+      font-size: 9px;
+      font-weight: 800;
+      color: #2563EB;
+      margin-bottom: 2px;
+    }
+    .wf-step-name {
+      font-size: 10px;
+      font-weight: 700;
+      color: #0F172A;
+      line-height: 1.2;
+    }
+    .wf-step-sub {
+      font-size: 8.5px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* Right Table Styling */
+    .table-container {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #E2E8F0;
+    }
+    .table-container th, 
+    .table-container td {
+      padding: 7px 10px;
+      font-size: 11px;
+      text-align: center;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .table-container th {
+      background: #1E1B4B;
+      color: white;
+      font-weight: 700;
+      font-size: 11.5px;
+      letter-spacing: 0.2px;
+    }
+    .table-container th:first-child,
+    .table-container td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: #1E293B;
+    }
+    .table-container th.highlight-col {
+      background: #2563EB;
+    }
+    .table-container td.highlight-col {
+      background: #F0FDF4;
+      font-weight: 700;
+      color: #15803D;
+    }
+    .check-mark {
+      color: #16A34A;
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .cross-mark {
+      color: #DC2626;
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .sub-note {
+      font-size: 9.5px;
+      color: #64748B;
+      font-weight: normal;
+    }
+
+    /* Demo Link Footer Bar */
+    .demo-bar {
+      margin-top: 10px;
+      background: linear-gradient(135deg, #EFF6FF 0%, #F0FDF4 100%);
+      border: 1.5px dashed #2563EB;
+      border-radius: 8px;
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .demo-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #1E1B4B;
+    }
+    .demo-item a {
+      color: #2563EB;
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+    }
+    .demo-item a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slide-container">
+  <!-- Top Slide Header -->
+  <div class="slide-header">
+    <div class="project-brand">
+      <div class="project-logo-badge">SQ</div>
+      <div>
+        <span class="project-title">SatQuery AI</span>
+        <span class="project-subtitle">— Bi-Temporal Satellite Intelligence & Geospatial VQA</span>
+      </div>
+    </div>
+    <div class="sih-badge">
+      <span>★</span> Smart India Hackathon (SIH 2026)
+    </div>
+  </div>
+
+  <!-- Slide Body -->
+  <div class="slide-body">
+    <!-- LEFT CARD: REFERENCES -->
+    <div class="column-card">
+      <div>
+        <div class="section-title">References & Research Foundations</div>
+
+        <div class="ref-group">
+          <div class="ref-group-title">🛰️ Satellite Data & Constellations:</div>
+          <ul class="ref-list">
+            <li class="ref-item">➢ <b>Copernicus Data Space (Sentinel-1 SAR & Sentinel-2 Optical):</b><br>
+              <a href="https://dataspace.copernicus.eu/" target="_blank">https://dataspace.copernicus.eu/</a></li>
+            <li class="ref-item">➢ <b>USGS EarthExplorer (Landsat Multi-Spectral Missions):</b><br>
+              <a href="https://earthexplorer.usgs.gov/" target="_blank">https://earthexplorer.usgs.gov/</a></li>
+            <li class="ref-item">➢ <b>ESA Sentinel Online Technical Guides:</b><br>
+              <a href="https://sentinels.copernicus.eu/" target="_blank">https://sentinels.copernicus.eu/</a></li>
+          </ul>
+        </div>
+
+        <div class="ref-group">
+          <div class="ref-group-title">📚 Research & Benchmark Datasets:</div>
+          <ul class="ref-list">
+            <li class="ref-item">➢ <b>LEVIR-CD Benchmark (Bi-Temporal Change Detection):</b><br>
+              <a href="https://chenhao.in/LEVIR/" target="_blank">https://chenhao.in/LEVIR/</a></li>
+            <li class="ref-item">➢ <b>BigEarthNet (Multispectral Remote Sensing Dataset):</b><br>
+              <a href="https://bigearth.net/" target="_blank">https://bigearth.net/</a></li>
+            <li class="ref-item">➢ <b>RSVQA: Remote Sensing Visual Question Answering (IEEE TGRS):</b><br>
+              <a href="https://rsvqa.sylvainlobry.com/" target="_blank">https://rsvqa.sylvainlobry.com/</a></li>
+          </ul>
+        </div>
+
+        <div class="ref-group">
+          <div class="ref-group-title">🌐 Feasibility & Geospatial Standards:</div>
+          <ul class="ref-list">
+            <li class="ref-item">➢ <b>OGC GeoTIFF & Coordinate Reference System (CRS) Standards:</b><br>
+              <a href="https://www.ogc.org/standards/geotiff" target="_blank">https://www.ogc.org/standards/geotiff</a></li>
+            <li class="ref-item">➢ <b>ISRO Bhuvan Open Geoportal Services:</b><br>
+              <a href="https://bhuvan.nrsc.gov.in/" target="_blank">https://bhuvan.nrsc.gov.in/</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Research Workflow Flowchart -->
+      <div class="workflow-container">
+        <div class="workflow-title">Research & System Workflow</div>
+        <div class="workflow-steps">
+          <div class="wf-step active">
+            <div class="wf-step-num">STEP 1</div>
+            <div class="wf-step-name">T1/T2 Ingestion</div>
+            <div class="wf-step-sub">Rasterio & CRS</div>
+          </div>
+          <div class="wf-step">
+            <div class="wf-step-num">STEP 2</div>
+            <div class="wf-step-name">Change Detector</div>
+            <div class="wf-step-sub">Bounding Box</div>
+          </div>
+          <div class="wf-step active">
+            <div class="wf-step-num">STEP 3</div>
+            <div class="wf-step-name">Spectral Deltas</div>
+            <div class="wf-step-sub">NDVI / NDBI / NDWI</div>
+          </div>
+          <div class="wf-step">
+            <div class="wf-step-num">STEP 4</div>
+            <div class="wf-step-name">SAR & Evidence</div>
+            <div class="wf-step-sub">100% Trace Audit</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT CARD: COMPARISON WITH EXISTING SYSTEMS -->
+    <div class="column-card" style="background: white;">
+      <div>
+        <div class="section-title">Comparison with Existing Systems</div>
+        <table class="table-container">
+          <thead>
+            <tr>
+              <th>Feature / Capability</th>
+              <th class="highlight-col">SatQuery AI</th>
+              <th>GEE (Google)</th>
+              <th>QGIS / ArcGIS</th>
+              <th>Standard DL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bi-Temporal Change Detection</td>
+              <td class="highlight-col"><span class="check-mark">☑</span></td>
+              <td><span class="check-mark">☑</span> <span class="sub-note">(Script)</span></td>
+              <td><span class="check-mark">☑</span> <span class="sub-note">(Manual)</span></td>
+              <td><span class="cross-mark">☒</span></td>
+            </tr>
+            <tr>
+              <td>Spectral Deltas (NDVI, NDWI, NDBI)</td>
+              <td class="highlight-col"><span class="check-mark">☑</span></td>
+              <td><span class="check-mark">☑</span></td>
+              <td><span class="check-mark">☑</span> <span class="sub-note">(Manual)</span></td>
+              <td><span class="cross-mark">☒</span></td>
+            </tr>
+            <tr>
+              <td>Optical-SAR Multi-Modal Fusion</td>
+              <td class="highlight-col"><span class="check-mark">☑</span></td>
+              <td><span class="cross-mark">☒</span> <span class="sub-note">(Custom)</span></td>
+              <td><span class="cross-mark">☒</span></td>
+              <td><span class="cross-mark">☒</span></td>
+            </tr>
+            <tr>
+              <td>Audit-Grade Evidence Extraction</td>
+              <td class="highlight-col"><span class="check-mark">☑</span></td>
+              <td><span class="cross-mark">☒</span></td>
+              <td><span class="cross-mark">☒</span></td>
+              <td><span class="cross-mark">☒</span></td>
+            </tr>
+            <tr>
+              <td>100% Explainable Trace Log</td>
+              <td class="highlight-col"><span class="check-mark">☑</span></td>
+              <td><span class="cross-mark">☒</span></td>
+              <td><span class="cross-mark">☒</span></td>
+              <td><span class="cross-mark">☒</span></td>
+            </tr>
+            <tr>
+              <td>Contradiction Penalty & Audit Engine</td>
+              <td class="highlight-col"><span class="check-mark">☑</span></td>
+              <td><span class="cross-mark">☒</span></td>
+              <td><span class="cross-mark">☒</span></td>
+              <td><span class="cross-mark">☒</span></td>
+            </tr>
+            <tr>
+              <td>Zero-Hallucination Remote Sensing VQA</td>
+              <td class="highlight-col"><span class="check-mark">☑</span></td>
+              <td><span class="cross-mark">☒</span></td>
+              <td><span class="cross-mark">☒</span></td>
+              <td><span class="cross-mark">☒</span></td>
+            </tr>
+            <tr>
+              <td>Mission Control Web Workspace</td>
+              <td class="highlight-col"><span class="check-mark">☑</span></td>
+              <td><span class="cross-mark">☒</span> <span class="sub-note">(Editor)</span></td>
+              <td><span class="cross-mark">☒</span> <span class="sub-note">(Desktop)</span></td>
+              <td><span class="cross-mark">☒</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Live Demo Links -->
+      <div class="demo-bar">
+        <div class="demo-item">
+          💻 <span>GitHub:</span>
+          <a href="https://github.com/navneetpatel9123-blip/SatQuery.git" target="_blank">https://github.com/navneetpatel9123-blip/SatQuery.git</a>
+        </div>
+        <div class="demo-item">
+          🚀 <span>Live Demo:</span>
+          <a href="http://localhost:3000/upload" target="_blank">http://localhost:3000/upload</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
