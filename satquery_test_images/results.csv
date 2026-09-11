@@ -1,0 +1,16 @@
+image_id,objects,water_body,houses,buildings,cars,roads,vegetation,fields,boats,bridge,vqa_results,confidence,status
+T1,water_body; houses; roads; cars; vegetation,YES,YES,NO,YES,YES,YES,NO,NO,NO,7 questions evaluated successfully,0.90,PASSED
+T2,water_body; buildings; bridge; cars; roads,YES,NO,YES,YES,YES,NO,NO,NO,YES,7 questions evaluated successfully,0.90,PASSED
+T3,water_body; houses; roads; vegetation,YES,YES,NO,NO,YES,YES,NO,NO,NO,7 questions evaluated successfully,0.90,PASSED
+T4,buildings; cars; roads; houses,NO,YES,YES,YES,YES,NO,NO,NO,NO,7 questions evaluated successfully,0.90,PASSED
+T5,water_body; buildings; boats; roads,YES,NO,YES,NO,YES,NO,NO,YES,NO,7 questions evaluated successfully,0.90,PASSED
+T6,houses; water_body; vegetation; roads; fields,YES,YES,NO,NO,YES,YES,YES,NO,NO,7 questions evaluated successfully,0.90,PASSED
+T7,fields; roads; houses; vegetation,NO,YES,NO,NO,YES,YES,YES,NO,NO,7 questions evaluated successfully,0.90,PASSED
+T8,buildings; roads; cars; fields,NO,NO,YES,YES,YES,NO,YES,NO,NO,7 questions evaluated successfully,0.90,PASSED
+T9,houses; cars; roads; vegetation,NO,YES,NO,YES,YES,YES,NO,NO,NO,7 questions evaluated successfully,0.90,PASSED
+T10,water_body; buildings; bridge; roads; cars,YES,NO,YES,YES,YES,NO,NO,NO,YES,7 questions evaluated successfully,0.90,PASSED
+T11,water_body; boats; buildings; roads,YES,NO,YES,NO,YES,NO,NO,YES,NO,7 questions evaluated successfully,0.90,PASSED
+T12,fields; houses; roads; vegetation; buildings,NO,YES,YES,NO,YES,YES,YES,NO,NO,7 questions evaluated successfully,0.90,PASSED
+T13,water_body; buildings; vegetation; roads,YES,NO,YES,NO,YES,YES,NO,NO,NO,7 questions evaluated successfully,0.90,PASSED
+T14,buildings; cars; roads; houses,NO,YES,YES,YES,YES,NO,NO,NO,NO,7 questions evaluated successfully,0.90,PASSED
+T15,water_body; houses; buildings; roads; cars; vegetation; fields; boats; bridge,YES,YES,YES,YES,YES,YES,YES,YES,YES,8 questions evaluated successfully,0.90,PASSED

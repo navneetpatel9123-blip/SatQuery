@@ -1,0 +1,22 @@
+# BigEarthNet Remote-Sensing Adaptation Configuration
+model:
+  name: "resnet50"
+  num_classes: 43 # BigEarthNet-19 or BigEarthNet-43 label configurations
+  pretrained: true
+
+dataset:
+  name: "BigEarthNet"
+  path: "./training/datasets/bigearthnet"
+  bands: ["B02", "B03", "B04", "B08"] # RGB + NIR (10m bands)
+  image_size: 120 # Sentinel-2 standard patch size for 10m bands
+  batch_size: 64
+  num_workers: 4
+
+training:
+  epochs: 20
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  momentum: 0.9
+  device: "cuda" # or "cpu"
+  checkpoint_dir: "./training/checkpoints"
+  save_every: 5

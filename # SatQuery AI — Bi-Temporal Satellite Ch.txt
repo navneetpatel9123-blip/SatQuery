@@ -1,0 +1,9 @@
+# SatQuery AI — Bi-Temporal Satellite Change Detection & VQA
+
+
+## Data Workspace
+Upload files to start ingestion. Supported: GeoTIFF (.tif, .tiff), PNG, JPEG (no CRS).
+
+## GIS Inspector Viewport
+
+### Pair Validation Analysis

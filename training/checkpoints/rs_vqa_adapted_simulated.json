@@ -1,0 +1,9 @@
+{
+  "model_type": "resnet50",
+  "classes": 43,
+  "trained_epochs": 5,
+  "val_f1": 0.8,
+  "val_loss": 0.116,
+  "status": "adapted_baseline",
+  "dataset": "BigEarthNet"
+}

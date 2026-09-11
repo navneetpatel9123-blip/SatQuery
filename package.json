@@ -1,0 +1,10 @@
+{
+  "name": "satquery-ai",
+  "version": "1.0.0",
+  "description": "SatQuery AI — Bi-Temporal Change VQA Platform",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && python -m uvicorn app.main:app --reload --port 8000"
+  }
+}
